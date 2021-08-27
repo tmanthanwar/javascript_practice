@@ -1,0 +1,20 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        Enter Your Email ID <input type="text" id="email" placeholder="Enter your ID here"><br><br>
+        <button onclick="changeEmail()">Submit</button>
+
+        <script>
+            function changeEmail() {
+                var email = document.getElementById("email").value;
+                email = email.trim();
+                email = email.toLowercase();
+                document.getElementById("email").value = email;
+            }
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>FbButton</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body> 
+        <div style="text-align: center;">
+        <i onclick="hitALikes()" class="fa fa-thumbs-up" style="font-size:36px"></i>&nbsp;<span id="likes_id">0</span>&nbsp;&nbsp;&nbsp;   
+        </div>       
+        <script>
+            var likes = 0;
+
+            function hitALikes(){
+                likes++;
+                document.getElementById("likes_id").innerHTML = likes;
+            }
+        </script>
+    </body>
+</html>

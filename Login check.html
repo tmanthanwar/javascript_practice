@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Login page</title>
+  </head>
+  <body>
+    <form>
+      Username <input type="text" id="username">&nbsp;<span id="uname"></span><br><br>
+      Password <input type="password" id="password">&nbsp;<span id="pass"></span><br><br>
+      <button onclick="validate()">Submit</button><br><br>
+      <h1 id="msg"></h1>
+    </form>
+
+    <script>
+      function validate() {
+      event.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var uname = document.getElementById("uname");
+      var pass = document.getElementById("pass");
+      var msg = document.getElementById("msg");
+      
+      username == "" ? uname.innerHTML = "username should not be empty" : uname.innerHTML = "" ;
+      password == "" ? pass.innerHTML = "password should not be empty" : pass.innerHTML = "";
+      username.length < 5 ? uname.innerHTML = "username should have atleast 5 character" : uname.innerHTML = "";
+      username == "sai123" && password == "ravi123" ? msg.innerHTML = "Login Sucess" : msg.innerHTML = "Login Failure" ;
+      }      
+      </script>
+  </body>
+</html>

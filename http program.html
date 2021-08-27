@@ -1,0 +1,53 @@
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+           <table border ="1" width="100%">
+            
+              <thead>
+                   <th>username</th>
+                   <th>email</th>
+                   <th>website</th>
+              </thead>
+
+               <tbody id="tbody">
+                      
+                     
+                 
+               </tbody>
+
+           </table>
+
+         <script>
+                (function(){
+                 console.log("I am executed");
+
+                 var http = new XMLHttpRequest();
+
+                  http.open("get","https://jsonplaceholder.typicode.com/users");
+
+                  http.send();
+
+                  http.onreadystatechange = function(){
+                            if(http.readyState == 4 && http.status == "200"){
+                                console.log(http.responseText);
+                                var users = JSON.parse(http.responseText);
+                               
+                                var tbody =  document.getElementById("tbody");
+                                var tbodyData = "";
+                                 users.forEach(function(user){
+                                      tbodyData += "<tr>"+ "<td>"+user.username+"</td>"+"<td>"+user.email+"</td>"+"<td>"+user.website+"</td>"   +"</tr>"
+                                 }) 
+                                 
+}
+             })();
+         </script>
+
+     </body>
+     
+</html>
+
+

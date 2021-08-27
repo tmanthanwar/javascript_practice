@@ -1,0 +1,38 @@
+<html>
+    <head>
+
+    </head>
+     <body>
+
+        <ul id="list">
+
+        </ul>
+
+        
+
+        <script>
+
+
+var index = 0;
+
+   var listOfUsers="";
+
+   while(index < users.length){
+
+          var user = users[index];
+
+ listOfUsers = listOfUsers + "<li>"+user.username+"&nbsp;&nbsp;&nbsp;" +user.website+"&nbsp;&nbsp;&nbsp;" + user.address.street+"&nbsp;&nbsp;"+ user.company.name+"</li>";
+
+          index++;
+
+   }
+   console.log(listOfUsers);
+
+   document.getElementById("list").innerHTML = listOfUsers;
+
+
+
+        </script>
+    
+     </body>
+</html>
