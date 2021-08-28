@@ -40,3 +40,48 @@
     }
     initApp();
 
+    function inputValue(square){
+        result =  square * square;
+        console.log(result);
+    }
+    inputValue(10);
+
+    // to find out arguments;
+
+    
+    function myFunction(){
+        console.log(arguments);
+    }
+    myFunction(10,20,30);
+
+
+    // anonymous function
+
+    function f1(a){
+        console.log(a);
+        a(10,20);
+    }
+    f1(function(a,b){
+        console.log("this is anonymous function.");
+        console.log(a+b);
+    })
+
+    // For Each function.
+    var array = [10,20,54,67,80];
+
+    array.forEach(function(v,index){
+        console.log(index + ":" + v);
+    })
+    
+    // for each function with 2 array.
+    var array = [10,20,54,67,80];
+    var array2 = ["ravi","kishan","kishor","suraj","mayur"];
+
+    var m = function(v,index){
+        console.log(index + ":" + v );
+    }
+
+    array.forEach(m);
+    array2.forEach(m);
+
+
