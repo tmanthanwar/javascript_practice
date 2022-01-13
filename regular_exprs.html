@@ -1,0 +1,40 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+       Password - <input type="password" id="password"><span id="pass"></span><br><br>
+        <button onclick="validate()">Submit</button>
+       <script>
+
+           function validate(){
+            var password = document.getElementById("password").value;
+            var pass = document.getElementById("pass");
+
+            var patt1 = /[A-Z]/;
+            var patt2 = /[a-z]/;
+            var patt3 = /[0-9]/;
+            var patt4 = /[!@#$%^&*]/
+            var patt5 = /\s/;
+            
+            if(patt1.test(password)!=true){
+                alert('Your password must contain at least one uppercase letter.');
+            }
+            if(patt2.test(password)!=true){
+                alert('Your password must contain at least one lowercase letter.');
+            }
+            if(patt3.test(password)!=true){
+                alert('Your password must contain at least one number letter.')
+            }
+            if(patt4.test(password)!=true){
+                alert('Your password must contain at least one special character letter.')
+            }
+            if(patt5.test(password)== true){
+                alert('invalid');
+            }
+
+    }
+       </script>
+
+    </body>
+</html>
