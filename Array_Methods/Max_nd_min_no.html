@@ -1,0 +1,18 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>This programe gives a maximum no. from an array.</h3>
+        <p>This is minimum no. <span id="min"></span></p>
+        <p>This is minimum no. <span id="max"></span></p>
+
+        <script>
+            var array = [13,54,34,87,29,45];
+            var newArray = array.sort(function(a,b){return(a-b)});
+            document.getElementById("min").innerHTML = newArray[0];
+            var newArray = array.sort(function(a,b){return(b-a)});
+            document.getElementById("max").innerHTML = newArray[0];
+        </script>
+    </body>
+</html>
