@@ -1,27 +1,10 @@
-// remove duplicates
+var arra = [3,6,4,2,8];
 
-// var array = ["ravi", "kiran","rajesh","kiran","rajesh"];
-// var newArray = [];
+var text = "";
 
-// for(i=0; i<array.length; i++){
-//     if(newArray.includes(array[i])){
-//         continue;
-//     }
-//     newArray.push(array[i]);
-// }
-// console.log(newArray);
-// console.log(newArray.reverse());
+var newArray = arra.forEach(multi);
 
-// // print string or other type of data
-
-// var array = [1,2,3,4,5,"ravi","kiran","swati",true,false];
-
-// function cleanArray(array, typeOfdata) {
-//     var newArray = array.filter(element);
-    // function (element) {
-//         return typeof element == typeOfdata;
-//     };
-//     console.log(newArray);
-// }
-// cleanArray(array,"number");
-
+function multi(value) {
+    return text += value*2;
+}
+console.log(text);

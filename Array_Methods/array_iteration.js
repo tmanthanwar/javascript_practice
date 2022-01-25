@@ -5,7 +5,7 @@ var text = "";
 var newArray = array.forEach(myFunction);
 
 function myFunction(value){
-    text += value ;
+    return text += value*2 + "\t" ;
 }
 console.log(text);
 
@@ -36,7 +36,7 @@ var array3 = [10,20,30,15];
 var sum = array3.reduce(myArray3);
 
 function myArray3(total,value){
-    return total + value;
+    return total += value;
 }
 console.log(sum);
 
@@ -77,7 +77,7 @@ var test = series.find(greaterThan);
 function greaterThan(value){
     return value > 18;
 }
-console.log(test); /* 43 is first value that is greater than 18.*/
+console.log(test); /* 19 is first value that is greater than 18.*/
 
 // array.findIndexOf() - returns the index of first element that passes the test.
 console.log("\n1) array.findIndex()");

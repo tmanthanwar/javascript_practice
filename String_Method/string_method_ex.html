@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+
+        <h3>Login here</h3>
+        <form>
+        Username -> <input type="text" id="uname" placeholder="Enter your Username">
+        Password -> <input type="password" id="pass">
+        <button onclick="changeEmail()">Submit</button>
+        </form>
+        <script>
+            function changeEmail(){
+                event.preventDefault();
+                email = document.getElementById("uname").value;
+                email = email.trim();
+                email = email.toLowerCase();
+                document.getElementById("uname").value = email;
+            }
+        </script>
+    </body>
+</html>

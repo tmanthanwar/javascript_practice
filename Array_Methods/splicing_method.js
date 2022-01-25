@@ -13,7 +13,7 @@ console.log(fruit);
 // The splice() method returns an array with the deleted items:
 
 fruit = ["Mango","Banana","kiwi","papaya"];
-fruit.splice(1,2,"green-apple","watermelon"); 
+fruit.splice(1,1,"green-apple","watermelon"); 
 console.log(fruit);
 
 

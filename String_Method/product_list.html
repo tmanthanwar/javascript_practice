@@ -1,0 +1,96 @@
+<html>
+    <head></head>
+    <body>
+        <h3>Product Details</h3>
+
+        <center><form id="form">
+            Product ID - <input type="text" id="pid">
+            Product Name - <input type="text" id="pname">
+            Price - <input type="text" id="price">
+            Brand - <input type="text" id="brand">
+            <button onclick="addProduct()">Add Product</button>
+            <button id="save">Save Product</button>
+        </form></center>
+        <table border="1px" width="100%">
+            <thead>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Brand</th>
+                <th>Time And Date</th>
+                <th colspan="2">Operation</th>
+                <!-- <th colspan="2">Operaton</th> -->
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+        <script>
+             function timeStamp(){
+                var date = new Date();
+                var t = date.getHours() + ":" + date.getMinutes();
+                var d = date.getDay() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+                return t + " " + d;
+            }
+            document.getElementById("save").style.display = "none";
+            var products = [];
+           
+            function getValue(id){
+                return document.getElementById(id).value;
+            }
+            function addProduct(){
+                event.preventDefault();
+                var pid = getValue("pid");
+                var pname = getValue("pname");
+                var price = getValue("price");
+                var brand = getValue("brand");
+                console.log(pid);
+
+                var product = {
+                    pid : pid,
+                    pname : pname,
+                    price : price,
+                    brand : brand,
+                    timeStamp : timeStamp()
+                }
+                products.push(product);
+                console.log(products);   
+                showProducts(products);
+            }
+            
+            function showProducts(products){
+                var tbody = document.getElementById("tbody");
+                var tbodyData = "";
+                products.forEach(function(product){
+                    tbodyData += "<tr>" + "<td>" + product.pid + "</td>" + "<td>" + product.pname + "</td>" + "<td>" + product.price + "</td>" + "<td>" + product.brand + "</td>" + "<td>" + product.timeStamp + "</td>" + "<td> <button onclick = 'editProduct("+ product.pid+")'>Edit</button></td>" + "<td><button onclick='deleteProduct("+product.pid+")'>Delete</button></td>" +"</tr>"; 
+                })
+                tbody.innerHTML = tbodyData;
+                document.getElementById("form").reset();
+            }
+
+            function deleteProduct(pid){
+                console.log("pid",pid);
+                products.forEach(function(product,i){
+                    if(product.pid == pid){
+                        products.splice(i,1);
+                    };
+                })
+                showProducts(products);
+            }
+
+            function editProduct(pid){
+
+            products.forEach(function(product,i){
+            if(product.pid == pid){
+           document.getElementById("pid").value=product.pid;
+           document.getElementById("name").value=product.name;
+           document.getElementById("price").value=product.price;
+           document.getElementById("brand").value=product.brand;
+           document.getElementById('add').style.display = "none";
+           document.getElementById('save').style.display = "inline";
+           return;
+     }
+})
+
+}
+        </script>
+    </body>
+</html>
